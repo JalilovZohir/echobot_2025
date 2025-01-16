@@ -3,7 +3,7 @@ import requests
 TOKEN = "8046570764:AAHmkOTv-5U8NHeUN0ms6msE-H05gX0gT7Y"
 CHAT_ID = 5474985935
 
-def send_location_request(chat_id):
+def send_location(chat_id):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     
     keyboard = {
@@ -21,7 +21,7 @@ def send_location_request(chat_id):
     response = requests.post(url, json=payload)
     return response.json()
 
-send_location_request(CHAT_ID)
+send_location(CHAT_ID)
 
 
 import requests
