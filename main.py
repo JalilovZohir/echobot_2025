@@ -1,1 +1,53 @@
-print(9)
+import requests
+
+TOKEN = "8046570764:AAHmkOTv-5U8NHeUN0ms6msE-H05gX0gT7Y"
+CHAT_ID = 6824726862
+
+def send_location_request(chat_id):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    
+    keyboard = {
+        "keyboard": [
+            [{"text": "Joylashuv", "request_location": True}]
+        ]
+    }
+    
+    payload = {
+        "chat_id": chat_id,
+        "text": "Lokatsiya",
+        "reply_markup": keyboard
+    }
+    
+    response = requests.post(url, json=payload)
+    return response.json()
+
+send_location_request(CHAT_ID)
+
+
+
+
+
+import requests
+
+TOKEN = "8046570764:AAHmkOTv-5U8NHeUN0ms6msE-H05gX0gT7Y"
+CHAT_ID = 5474985935
+
+def send_message(chat_id):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    
+    keyboard = {
+        "keyboard": [
+            [{"text": 'location'}]
+        ]
+        
+    }
+    
+    payload = {
+        "chat_id": chat_id,
+        "text": "Button",
+        "reply_markup": keyboard
+    }
+    
+    requests.post(url, json=payload)
+
+send_message(CHAT_ID)
